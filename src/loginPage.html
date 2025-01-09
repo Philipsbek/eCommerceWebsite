@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../styles/loginPage.css">
+    
+</head>
+<body background="../images/loginPageBg.jpg">
+
+   <form class="loginForm">
+    <h1 style="color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">User Login</h1>
+    <div id = "signInMessage" class="MessageDiv" style="display:none;"></div>
+ 
+    <div >
+        <input type="email" id="email" placeholder="Email" style="height: 25px; width: 300px; margin-bottom: 10px; border-radius: 8px; border: none; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" required></input>  
+        
+    </div>  
+    <div>
+        <input type="password" id="password" placeholder="Password" style="height: 25px; width: 300px; margin-bottom: 10px; border-radius: 8px; border: none; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" required></input>  
+        
+    </div>  
+
+    <button id="submitSignIn" style="background-color: lightblue ;      width: 3cm; height: 0.8cm; border-radius: 8px; border: none; margin-bottom: 10px; margin-top: 10px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Login</button>
+    <a href="signupPage.html" style="color: white; margin-top: 50px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Don't have an account? Register here</a>
+   </form> 
+
+
+
+
+
+    
+
+   <script type="module" src="firebaseAuth.js"></script>
+    
+</body>
+</html>

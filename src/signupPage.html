@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="../styles/signupPage.css">
+    <script type= "module" src="firebaseAuth.js"></script>
+</head>
+<body background="../images/loginPageBg.jpg">
+
+    
+    <form class="signupForm" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <h1 style="color: white;">Register</h1>
+        <div id = "signUpMessage" class="MessageDiv" style="display:none;"></div>
+        <div>
+            <input type="text" id="fName" placeholder="First Name" style="height: 25px; width: 300px; margin-bottom: 10px; border-radius: 8px; border: none; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" required></input>  
+            
+        </div>    
+        <div>
+            <input type="text" id="lName" placeholder="Last Name" style="height: 25px; width: 300px; margin-bottom: 10px; border-radius: 8px; border: none; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" required></input>  
+            
+        </div>  
+        <div>
+            <input type="email" id="rEmail" placeholder="Email" style="height: 25px; width: 300px; margin-bottom: 10px; border-radius: 8px; border: none; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" required></input>  
+           
+        </div>  
+        <div>
+            <input type="password" id="rPassword" placeholder="Password" style="height: 25px; width: 300px; margin-bottom: 10px; border-radius: 8px; border: none; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" required></input>  
+            
+        </div>  
+        <button id="submitSignUp" style="background-color: lightblue ;      width: 3cm; height: 0.8cm; border-radius: 8px; border: none; margin-bottom: 10px; margin-top: 10px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Sign Up</button>
+        <a href="loginPage.html" style="color: white; margin-top: 50px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Already have an account? Login here</a>
+
+    </form> 
+
+
+
+
+
+
+
+</body>
+</html>

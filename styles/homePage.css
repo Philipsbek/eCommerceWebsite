@@ -1,0 +1,23 @@
+header {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 2px; 
+    color: black; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+nav a {
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+}
+  
+nav a:hover {
+    text-decoration: underline; 
+}
+  
+
+
+
