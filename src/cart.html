@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+  <link rel="stylesheet" href="styles.css"> <!-- Optional: Add your CSS file -->
+</head>
+<body>
+  <header>
+    <h1>My Cart</h1>
+    <button id="logoutButton">Logout</button>
+  </header>
+  <main>
+    <div id="cartItems">
+      <h2>Your Cart</h2>
+      <ul id="cartList"></ul>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Your Shop Name</p>
+  </footer>
+
+  <script type="module">
+    // Firebase configuration
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const cartList = document.getElementById("cartList");
+    const logoutButton = document.getElementById("logoutButton");
+
+    // Fetch and display cart items for the logged-in user
+    const fetchCart = async (user) => {
+      try {
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists()) {
+          const cart = userDoc.data().cart || [];
+
+          // Clear previous cart items
+          cartList.innerHTML = "";
+
+          // Populate the cart list
+          if (cart.length > 0) {
+            cart.forEach((item) => {
+              const li = document.createElement("li");
+              li.textContent = `${item.name} - $${item.price}`;
+              cartList.appendChild(li);
+            });
+          } else {
+            cartList.innerHTML = "<li>Your cart is empty.</li>";
+          }
+        } else {
+          console.error("No such document!");
+        }
+      } catch (error) {
+        console.error("Error fetching cart:", error.message);
+      }
+    };
+
+    // Monitor authentication state
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        fetchCart(user);
+      } else {
+        // Redirect to login page if not logged in
+        window.location.href = "loginPage.html";
+      }
+    });
+
+    // Logout functionality
+    logoutButton.addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+        alert("Logged out successfully!");
+        window.location.href = "homePage.html"; // Redirect to homepage
+      } catch (error) {
+        console.error("Error logging out:", error.message);
+      }
+    });
+  </script>
+</body>
+</html>

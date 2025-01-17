@@ -1,0 +1,67 @@
+header {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 2px; 
+    color: black; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+  
+nav a {
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+}
+  
+nav a:hover {
+    text-decoration: underline; 
+}
+
+
+.storeHero{ 
+    height: auto;
+    background: url('../images/storePageHeader.jpg') no-repeat center center/cover;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border:3px solid black;
+    border-radius: 2rem;
+
+    
+}
+
+.storeItemContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 2cm;
+    padding-bottom: 2cm;
+}
+
+.storeItemContainer p{
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 1rem;
+    text-align: center;
+
+}
+
+
+
+
+.storeItem{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 9cm; 
+    height: auto;
+    margin:auto;
+    border-radius: 2rem;
+    border: 5px solid black;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.2);
+    margin-top: 2cm;
+}
