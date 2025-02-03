@@ -1,2 +1,2 @@
 # eCommerceWebsite
- an idea for eCommerce website
+ HTML, CSS, JavaScript + Firebase
